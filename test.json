@@ -1,0 +1,15 @@
+{
+  "people": {
+    "count": 20,
+    "model": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "age",
+        "type": "number"
+      }
+    ]
+  }
+}
