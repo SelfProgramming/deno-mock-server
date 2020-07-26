@@ -8,7 +8,7 @@
 ##### --port= - specify port for http server
 
 ## Clean cache
-`deno run --unstable --allow-write denomocker.ts clean`
+`deno run --unstable --allow-read --allow-write denomocker.ts clean`
 
 ### --args
 ##### --project= - specify cache scope to clean(default value = `default`)
