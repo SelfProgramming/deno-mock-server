@@ -1,10 +1,12 @@
 import { Route } from '../routes/Route.ts';
-import { createRegexp } from './createRegexp.ts';
+import { createRegexps } from './createRegexps.ts';
 import { createHandler } from './createHandler.ts';
+import { ProjectCache } from '../../ProjectCache.ts';
 
-export function createRegexpToHandler(routes: Route[], project: string): Map<string, Function> {
+export function createRegexpToHandler(routes: Route[], projectCache: ProjectCache): Map<string, Function> {
   return routes.reduce((regexToHandler, route) => {
-    regexToHandler.set(createRegexp(route.path), createHandler(route, project));
+    const handler = createHandler(route, projectCache);
+    createRegexps(route.path).forEach(regexp => regexToHandler.set(regexp, handler));
     return regexToHandler;
   }, new Map<string, Function>());
 }
