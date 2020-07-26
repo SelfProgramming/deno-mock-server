@@ -8,7 +8,7 @@ import {
 export class ProjectCache {
   readonly project: string;
 
-  private cacheDir: string = 'default';
+  private cacheDir!: string;
   private modelNameToFilePath: Map<string, string>;
 
   constructor(project: string) {

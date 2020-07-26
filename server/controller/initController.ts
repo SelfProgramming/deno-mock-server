@@ -1,4 +1,4 @@
-import * as path from 'https://deno.land/std/path/mod.ts';
+import { resolve } from 'https://deno.land/std/path/mod.ts';
 import { Controller } from './Controller.ts';
 import { parseRoutes } from './routes/parseRoutesConfig.ts';
 import { createRegexpToHandler } from './handlers/createRegexpToHandler.ts';
@@ -13,7 +13,7 @@ export function initController(project: string): Controller {
 
 function createProjectCache(project: string): ProjectCache {
   const projectCache = new ProjectCache(project);
-  const cacheDirPath = path.resolve('cache');
+  const cacheDirPath = resolve('cache');
   projectCache.createCacheDir(cacheDirPath);
   return projectCache;
 }

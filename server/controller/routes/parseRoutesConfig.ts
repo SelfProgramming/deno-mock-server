@@ -3,7 +3,7 @@ import { Route } from './Route.ts';
 import { adaptRoutesFromConfig } from './adaptRoutesFromConfig.ts';
 import { RoutesConfig } from './RoutesConfig.ts';
 
-export function parseRoutes(configPath = './test.json'): Route[]  {
+export function parseRoutes(configPath = './routes.json'): Route[]  {
   const routesConfig = readJsonSync(configPath) as RoutesConfig;
   return adaptRoutesFromConfig(routesConfig);
 }
