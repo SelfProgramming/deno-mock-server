@@ -69,6 +69,6 @@ GET, POST, DELETE
 ````
 
 ## NOTE:
-Random generation will create content only one time for each projects route.
+Random generation will create content only one time for each project's route.
 To re-generate content you must clean project cache.
 Cache will be available until cleaning. All data mutations will apply to cache files on your file system
