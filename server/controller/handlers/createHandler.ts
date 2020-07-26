@@ -2,7 +2,6 @@ import { ServerRequest } from 'https://deno.land/std/http/server.ts';
 
 import { Route } from '../routes/Route.ts';
 import { ProjectCache } from '../../ProjectCache.ts';
-import { createHeaders } from './http/createHeaders.ts';
 import { RequestHandlerFactory } from './http/RequestHandlerFactory.ts';
 import { HttpMethod } from './http/HttpMethod.ts';
 import { generateContent } from '../../content/generateContent.ts';
@@ -31,4 +30,12 @@ async function createContentIfAbsent(projectCache: ProjectCache, route: Route): 
     const content = generateContent(route);
     projectCache.writeToCacheFile(route.path, { data: content });
   }
+}
+
+function createHeaders() {
+  const headers = new Headers();
+  headers.append('Access-Control-Allow-Origin', '*');
+  headers.append('Access-Control-Allow-Methods', '*');
+  headers.append('Access-Control-Allow-Headers', '*');
+  return headers;
 }
