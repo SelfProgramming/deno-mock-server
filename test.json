@@ -4,7 +4,31 @@
     "model": [
       {
         "name": "name",
-        "type": "string"
+        "type": "string",
+        "size": "word"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "size": "sentence"
+      },
+      {
+        "name": "age",
+        "type": "number"
+      }
+    ]
+  },
+  "man": {
+    "model": [
+      {
+        "name": "name",
+        "type": "string",
+        "size": "word"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "size": "sentence"
       },
       {
         "name": "age",

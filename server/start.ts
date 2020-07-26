@@ -10,6 +10,5 @@ export async function start(config: Config): Promise<void> {
   console.log(`Http mock server listening on port ${port}`);
   for await (const req of server) {
     controller.handleRequest(req);
-    req.respond({ body: "Hello World\n" });
   }
 }

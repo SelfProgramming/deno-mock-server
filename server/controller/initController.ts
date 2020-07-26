@@ -4,6 +4,6 @@ import { createRegexpToHandler } from './handlers/createRegexpToHandler.ts';
 
 export function initController(project: string): Controller {
   const routes = parseRoutes();
-  const regexToHandler = createRegexpToHandler(routes, project);
-  return new Controller(regexToHandler);
+  const regexpToHandler = createRegexpToHandler(routes, project);
+  return new Controller(regexpToHandler);
 }
